@@ -38,19 +38,16 @@ const FetchParkingUsers = () => {
         </div>
         <nav>
           <p>
-            <img src="paint.png" alt="Parking Seeker Icon" className="icon" />
             <a href="AdminPage" style={{ color: 'white', textDecoration: 'none' }}>
               Home
             </a>
           </p>
           <p>
-            <img src="estb.jpg" alt="Parking Seeker Icon" className="icon" />
             <a href="FetchEstablishments" style={{ color: 'white', textDecoration: 'none' }}>
               Establishment List
             </a>
           </p>
           <p>
-            <img src="agent.jpg" alt="Parking Seeker Icon" className="icon" />
             <a href="FetchAgents" style={{ color: 'white', textDecoration: 'none' }}>
               Agents List
             </a>
@@ -58,40 +55,33 @@ const FetchParkingUsers = () => {
         </nav>
       </div>
       <div className="main-content">
-        <div className="header">
-          
-
-
-
-          
-        </div>
-        <div className="project-list">
-          <h1 className="pending">Parking Seekers Accounts</h1>
-          {parkingSeeker.length > 0 ? (
-            <ul className="user-list">
-              {parkingSeeker.map((seeker, index) => (
-                <React.Fragment key={seeker.id}>
-                  <li className="user-item">
-                    <img
-                      src={seeker.profileImageUrl || '/default-avatar.png'}
-                      alt={seeker.name}
-                      className="user-image"
-                    />
-                    <div className="user-details">
-                      <span className="user-name">{seeker.name}</span>
-                      <br />
-                      <span className="user-info">
-                        Address: {seeker.address} | Email: {seeker.email}
-                      </span>
-                    </div>
-                  </li>
-                  {index < parkingSeeker.length - 1 && <hr className="horizontal-line" />}
-                </React.Fragment>
-              ))}
-            </ul>
-          ) : (
-            <p>No parking seekers found.</p>
-          )}
+      <h1 className="pending"style={{marginTop: '5%', textAlign: 'center', fontWeight: 'bold',}}>Parking Seekers Accounts</h1>
+      <div className="project-list" style={{ height: '300px', overflowY: 'scroll', marginTop: '5%', height: '50%'}}>
+  {parkingSeeker.length > 0 ? (
+    <ul className="user-list">
+      {parkingSeeker.map((seeker, index) => (
+        <React.Fragment key={seeker.id}>
+          <li className="user-item">
+            <img
+              src={seeker.profileImageUrl || '/default-avatar.png'}
+              alt={seeker.name}
+              className="user-image"
+            />
+            <div className="user-details">
+              <span className="user-name">{seeker.name}</span>
+              <br />
+              <span className="user-info">
+                Address: {seeker.address} | Email: {seeker.email}
+              </span>
+            </div>
+          </li>
+          {index < parkingSeeker.length - 1 && <hr className="horizontal-line" />}
+        </React.Fragment>
+      ))}
+    </ul>
+  ) : (
+    <p>No parking seekers found.</p>
+  )}
         </div>
       </div>
     </div>

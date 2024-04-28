@@ -38,31 +38,25 @@ const FetchEstablishments = () => {
         </div>
 
         <p>
-          <img src="paint.png" alt="Parking Seeker Icon" className="icon" />
           <a href="AdminPage" style={{ color: 'white', textDecoration: 'none' }}>
             Home
           </a>
         </p>
         <p>
-          <img src="parkingseeker.png" alt="Parking Seeker Icon" className="icon" />
           <a href="FetchParkingUsers" style={{ color: 'white', textDecoration: 'none' }}>
             Parking Seeker List
           </a>
         </p>
         <p>
-          <img src="agent.jpg" alt="Parking Seeker Icon" className="icon" />
           <a href="FetchAgents" style={{ color: 'white', textDecoration: 'none' }}>
             Agents List
           </a>
         </p>
       </div>
       <div className="main-content">
-        <div className="header">
-
-          
-        </div>
-        <div className="project-list">
-          <h1 className="pending">Establishments Accounts</h1>
+      <h1 className="pending" style={{marginTop: '5%', textAlign: 'center', fontWeight: 'bold',}}>Establishments Accounts</h1>
+        <div className="project-list" style={{overflowY: 'scroll',marginTop: '5%', height: '25%', width: '70%'}}>
+         
           {establishments.length > 0 ? (
             <ul>
               {establishments.map((establishment, index) => (

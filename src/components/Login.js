@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import UserContext from '../UserContext';
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Dropdown } from 'bootstrap';
 
@@ -81,13 +82,13 @@ function Login() {
   };
 
 
-
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     minHeight: '100vh',
     backgroundColor: 'white',
+    
   };
   const selectStyle = {
     width: '100%',

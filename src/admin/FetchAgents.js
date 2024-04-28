@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../config/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import './AdminPage.css';
+import { getRenderPropValue } from 'antd/es/_util/getRenderPropValue';
 
 const FetchAgents = () => {
   const [agents, setAgents] = useState([]);
@@ -26,7 +27,7 @@ const FetchAgents = () => {
 
   return (
     <div className="admin-dashboard">
-      <div className="sidebar">
+      <div className="sidebar"  >
         <div className="admin-container">
           <img
             src="customer.jpg"
@@ -37,31 +38,24 @@ const FetchAgents = () => {
           <span className="admin-text">Admin</span>
         </div>
         <p>
-          <img src="paint.png" alt="Parking Seeker Icon" className="icon" />
-          <a href="AdminPage" style={{ color: 'white', textDecoration: 'none' }}>
+          <a href="AdminPage" style={{ color: 'white', textDecoration: 'none'}}>
             Home
           </a>
         </p>
         <p>
-          <img src="estb.jpg" alt="Parking Seeker Icon" className="icon" />
           <a href="FetchEstablishment" style={{ color: 'white', textDecoration: 'none' }}>
             Establishment List
           </a>
         </p>
         <p>
-          <img src="parkingseeker.png" alt="Parking Seeker Icon" className="icon" />
           <a href="FetchParkingUsers" style={{ color: 'white', textDecoration: 'none' }}>
             Parking Seeker List
           </a>
         </p>
       </div>
       <div className="main-content">
-        <div className="header">
-
-          
-        </div>
-        <div className="project-list">
-          <h1 className="pending">Agents Account</h1>
+      <h1 className="pending" ClassName="pending" style={{marginTop: '5%', textAlign: 'center', fontWeight: 'bold' }}>Agents Account</h1>
+        <div className="project-list"  style={{overflowY: 'scroll',marginTop: '5%', height: '25%', width: '70%', borderWidth: 10}}>
           {agents.length > 0 ? (
             <ul>
               {agents.map((agent, index) => (

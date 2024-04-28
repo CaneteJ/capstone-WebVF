@@ -122,15 +122,15 @@ function AdminPage() {
     />
     <span className="admin-text">Admin</span>
   </div>
-  <p><img src="estb.jpg" alt="Parking Seeker Icon" className="icon" /><a href ='FetchEstablishments' style={{ color: 'white', textDecoration: 'none' }}> Establishment List</a></p>
-  <p><img src="parkingseeker.png" alt="Parking Seeker Icon" className="icon" /><a href ='FetchParkingUsers' style={{ color: 'white', textDecoration: 'none' }}> Parking Seeker List</a></p>
+  <p><a href ='FetchEstablishments' style={{ color: 'white', textDecoration: 'none' }}> Establishment List</a></p>
+  <p><a href ='FetchParkingUsers' style={{ color: 'white', textDecoration: 'none' }}> Parking Seeker List</a></p>
 
-  <p><img src="agent.jpg" alt="Parking Seeker Icon" className="icon" /><a href ='FetchAgents' style={{ color: 'white', textDecoration: 'none' }}> Agents List</a></p>
+  <p><a href ='FetchAgents' style={{ color: 'white', textDecoration: 'none' }}> Agents List</a></p>
        
       </div>
       <div className="main-content">
-        <div className="header">Good day, Mr. Berto!</div>
-        <div className="summary-cards">
+        <div className="header"></div>
+        <div className="summary-cards" >
           {summaryCardsData.map(card => (
             <div key={card.title} className="card">
             <img src={card.imgSrc} alt={card.title} className="card-image" />
@@ -184,8 +184,8 @@ function AdminPage() {
                                     <span className="highlight-background">{account.totalSlots}</span>
                                 </div>
                                 </div>
-              <div><button onClick={() => handleApprove(account.id)} className="approve-button">Approve</button></div>
-              <div><button onClick={() => handleDecline(account.id)} className="decline-button">Decline</button></div>
+              <div><button onClick={() => handleApprove(account.id)} className="approve-button" style={{ fontStyle: 'bold', color: 'white', alignSelf: 'center' }}>Approve</button></div>
+              <div><button onClick={() => handleDecline(account.id)} className="decline-button" style={{ fontStyle: 'bold', color: 'white', alignSelf: 'center' }}>Decline</button></div>
             </div>
           ))}
         </div>
